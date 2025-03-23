@@ -9,14 +9,17 @@ def quicksort(arr):
     right = [x for x in arr[:-1] if x > pivot] # Elementos maiores que o pivô
     return quicksort(left) + [pivot] + quicksort(right)
 # Função para gerar números aleatórios
-def gerar_numeros_aleatorios(n=100, min_val=1, max_val=200):
+def gerar_numeros_aleatorios(n=100000, min_val=1, max_val=200000):
     return [random.randint(min_val, max_val) for _ in range(n)]
 # Função principal para testar o QuickSort
 if __name__ == "__main__":
-    tamanhos_listas = [1000, 10000, 100000, ]
 
-    for tamanho in tamanhos_listas:
-        tempo_inicio_seq = time.time()
-        numeros_ordenados_seq = quicksort(numeros.copy())  # criar uma cópia para n alterar o original
-        tempo_fim_seq = time.time()
-        tempo_seq = tempo_fim_seq - tempo_inicio_seq
+    numeros = gerar_numeros_aleatorios()
+    tempo_inicio_par = time.time()
+    print("Primeiros 10 números antes da ordenação:", numeros)
+    numeros_ordenados = quicksort(numeros)
+    print("Primeiros 10 números após a ordenação:", numeros_ordenados)
+    tempo_fim_par = time.time()
+    tempo_par = tempo_fim_par - tempo_inicio_par
+
+    print(f"Tempo Paralelo: {tempo_par:.4f} segundos")
