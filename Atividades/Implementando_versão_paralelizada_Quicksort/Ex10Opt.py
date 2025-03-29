@@ -53,7 +53,7 @@ def dividir_lista(arr, num_threads):
 
 if __name__ == "__main__":
     tamanhos_listas = [1000, 10000, 100000, ]  # Diferentes tamanhos para listas de teste
-    num_threads = 2  # Ajuste o número de threads conforme necessário
+    num_threads = 4  # Ajuste o número de threads conforme necessário
 
     for tamanho in tamanhos_listas:
         numeros = gerar_numeros_aleatorios(tamanho)
